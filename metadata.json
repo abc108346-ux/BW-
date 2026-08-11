@@ -1,0 +1,6 @@
+{
+  "name": "BW | Bernardo Web Design",
+  "description": "Agência de tecnologia focada na criação de sites profissionais, rápidos e responsivos para empresas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
