@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { GlareHover } from './GlareHover';
 import { 
   Monitor, 
   LayoutTemplate, 
@@ -43,15 +44,19 @@ export const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 hover:border-[#1565FF]/50 transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+              className="h-full"
             >
-              <div className="w-14 h-14 bg-[#1565FF]/10 text-[#1565FF] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#1565FF] group-hover:text-white transition-all duration-300">
-                <service.icon size={28} />
-              </div>
-              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-              <p className="text-white/60 leading-relaxed text-sm">
-                {service.desc}
-              </p>
+              <GlareHover className="h-full">
+                <div className="group h-full bg-white/5 border border-white/10 p-8 rounded-[inherit] hover:bg-white/10 hover:border-[#1565FF]/50 transition-all duration-300 cursor-pointer">
+                  <div className="w-14 h-14 bg-[#1565FF]/10 text-[#1565FF] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#1565FF] group-hover:text-white transition-all duration-300">
+                    <service.icon size={28} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                  <p className="text-white/60 leading-relaxed text-sm">
+                    {service.desc}
+                  </p>
+                </div>
+              </GlareHover>
             </motion.div>
           ))}
         </div>

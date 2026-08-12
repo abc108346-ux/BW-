@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { GlareHover } from './GlareHover';
 import { 
   Palette, 
   Smartphone, 
@@ -46,10 +47,14 @@ export const Differentials = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="flex flex-col items-center text-center gap-4 p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] hover:border-[#1565FF]/30 transition-colors"
+              className="h-full"
             >
-              <diff.icon className="text-[#1565FF]" size={32} strokeWidth={1.5} />
-              <span className="font-medium text-sm text-white/80">{diff.text}</span>
+              <GlareHover className="h-full">
+                <div className="flex h-full flex-col items-center justify-center text-center gap-4 p-6 bg-white/[0.02] border border-white/5 rounded-[inherit] hover:bg-white/[0.04] hover:border-[#1565FF]/30 transition-colors cursor-pointer">
+                  <diff.icon className="text-[#1565FF]" size={32} strokeWidth={1.5} />
+                  <span className="font-medium text-sm text-white/80">{diff.text}</span>
+                </div>
+              </GlareHover>
             </motion.div>
           ))}
         </div>
