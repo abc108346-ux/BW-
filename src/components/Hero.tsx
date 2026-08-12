@@ -13,9 +13,18 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-2xl"
+          className="max-w-2xl relative"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[#1565FF] text-sm font-medium mb-6">
+          {/* Background Image behind the main phrase */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] -z-10 opacity-40 mix-blend-screen pointer-events-none">
+            <img 
+              src="https://i.postimg.cc/XrD5y2pR/image.png" 
+              alt="Fundo abstrato" 
+              className="w-full h-full object-contain blur-[2px]" 
+            />
+          </div>
+
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[#1565FF] text-sm font-medium mb-6 relative z-10">
             <Rocket size={16} />
             Agência de Tecnologia
           </div>
