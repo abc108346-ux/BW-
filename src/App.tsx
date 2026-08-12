@@ -8,6 +8,7 @@ import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Services } from './components/Services';
 import { Differentials } from './components/Differentials';
+import { TrustedBy } from './components/TrustedBy';
 import { Timeline } from './components/Timeline';
 import { Portfolio } from './components/Portfolio';
 import { FAQ } from './components/FAQ';
@@ -22,6 +23,7 @@ export default function App() {
       <Header />
       <main>
         <Hero />
+        <TrustedBy />
         <Differentials />
         <About />
         <Services />
