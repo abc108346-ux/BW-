@@ -30,19 +30,20 @@ export const Contact = () => {
             <p className="text-white/60 text-sm">(51) 98050-7193</p>
           </motion.a>
 
-          <motion.div 
+          <motion.a 
+            href="mailto:contatosuportebw@gmail.com"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="flex flex-col items-center text-center gap-4 p-8 bg-white/5 border border-white/10 rounded-2xl"
+            className="flex flex-col items-center text-center gap-4 p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-[#1565FF]/50 transition-all group cursor-pointer"
           >
-            <div className="w-16 h-16 bg-white/5 text-white/50 rounded-full flex items-center justify-center mb-2">
+            <div className="w-16 h-16 bg-[#1565FF]/10 text-[#1565FF] rounded-full flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#1565FF] group-hover:text-white transition-all">
               <Mail size={32} />
             </div>
             <h3 className="text-xl font-bold">E-mail</h3>
-            <p className="text-white/60 text-sm">contato@bwweb.design</p>
-          </motion.div>
+            <p className="text-white/60 text-sm group-hover:text-white transition-colors">contatosuportebw@gmail.com</p>
+          </motion.a>
 
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
