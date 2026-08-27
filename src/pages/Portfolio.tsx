@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 
 const projects = [
   { name: 'Titanium POA', category: 'Academias', url: 'https://titaniumpoa.lovable.app/', type: 'Institucionais' },
-  { name: 'Fitness Nation', category: 'Academias', url: 'https://fitness-nation-landing--bernardog311012.replit.app', type: 'Landing Pages' },
+  { name: 'Escola Livre de Artes da Cena', category: 'Educação / Artes', url: 'https://escolalivredeartesdacenars.com.br', type: 'Institucionais' },
   { name: 'Baita Brasa', category: 'Restaurantes', url: 'https://baita-brasa-display--bwwweb.replit.app', type: 'Restaurantes' },
   { name: 'Trigo Pizzaria', category: 'Restaurantes', url: 'https://trigopizzaria.netlify.app', type: 'Restaurantes' },
   { name: 'Terraço Bowling Bar', category: 'Entretenimento', url: 'https://terracobowlingbar.netlify.app', type: 'Outros' },
