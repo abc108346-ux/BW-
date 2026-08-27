@@ -11,6 +11,7 @@ import { Footer } from './components/Footer';
 import { FloatingActions } from './components/FloatingActions';
 import { Home } from './pages/Home';
 import { Pricing } from './pages/Pricing';
+import { PortfolioPage } from './pages/Portfolio';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -42,6 +43,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/precos" element={<Pricing />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
           </Routes>
         </main>
         <Footer />

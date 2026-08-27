@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Rocket, MonitorSmartphone, Code2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Hero = () => {
   return (
@@ -45,12 +46,12 @@ export const Hero = () => {
             >
               🚀 Solicitar orçamento
             </a>
-            <a 
-              href="#portfolio"
+            <Link 
+              to="/portfolio"
               className="flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 active:scale-95"
             >
               💼 Ver projetos
-            </a>
+            </Link>
           </div>
         </motion.div>
 

@@ -1,6 +1,6 @@
-import { useRef, useState, PointerEvent } from "react";
+import { useRef, useState, PointerEvent, ReactNode } from "react";
 
-export const GlareHover = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => {
+export const GlareHover = ({ children, className = "" }: { children: ReactNode, className?: string }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);

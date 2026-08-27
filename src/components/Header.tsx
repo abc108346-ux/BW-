@@ -27,7 +27,7 @@ export const Header = () => {
     { label: 'Início', path: '/' },
     { label: 'Sobre', path: '/#sobre' },
     { label: 'Serviços', path: '/#servicos' },
-    { label: 'Portfólio', path: '/#portfolio' },
+    { label: 'Portfólio', path: '/portfolio' },
     { label: 'Preços', path: '/precos' },
     { label: 'FAQ', path: '/#faq' },
     { label: 'Contato', path: '/#contato' }
