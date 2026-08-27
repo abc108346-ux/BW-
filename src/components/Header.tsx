@@ -1,19 +1,21 @@
 import { useState, useEffect } from 'react';
 import { Instagram, Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Logo = () => (
-  <a href="#" className="flex items-center group">
+  <Link to="/" className="flex items-center group">
     <img 
       src="https://i.postimg.cc/yJRq94SW/image.png" 
       alt="BW | Bernardo Web Design" 
       className="h-16 md:h-24 object-contain group-hover:scale-105 transition-transform duration-300"
     />
-  </a>
+  </Link>
 );
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -21,7 +23,45 @@ export const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const links = ['Início', 'Sobre', 'Serviços', 'Portfólio', 'FAQ', 'Contato'];
+  const links = [
+    { label: 'Início', path: '/' },
+    { label: 'Sobre', path: '/#sobre' },
+    { label: 'Serviços', path: '/#servicos' },
+    { label: 'Portfólio', path: '/#portfolio' },
+    { label: 'Preços', path: '/precos' },
+    { label: 'FAQ', path: '/#faq' },
+    { label: 'Contato', path: '/#contato' }
+  ];
+
+  const renderLink = (link: { label: string, path: string }, className: string, onClick?: () => void) => {
+    const isHash = link.path.includes('#');
+    
+    // If it's a hash link and we're on the home page, just use href with the hash so smooth scroll works
+    if (isHash && location.pathname === '/') {
+      return (
+        <a 
+          key={link.label}
+          href={link.path.replace('/', '')}
+          className={className}
+          onClick={onClick}
+        >
+          {link.label}
+        </a>
+      );
+    }
+
+    // Otherwise use React Router Link
+    return (
+      <Link 
+        key={link.label}
+        to={link.path}
+        className={className}
+        onClick={onClick}
+      >
+        {link.label}
+      </Link>
+    );
+  };
 
   return (
     <header 
@@ -33,14 +73,9 @@ export const Header = () => {
         <Logo />
         
         <nav className="hidden lg:flex items-center gap-8">
-          {links.map(link => (
-            <a 
-              key={link} 
-              href={`#${link.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`}
-              className="text-sm font-medium text-white/80 hover:text-white transition-colors"
-            >
-              {link}
-            </a>
+          {links.map(link => renderLink(
+            link, 
+            "text-sm font-medium text-white/80 hover:text-white transition-colors"
           ))}
         </nav>
 
@@ -69,15 +104,10 @@ export const Header = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-b border-white/10 py-6 px-6 flex flex-col gap-4 shadow-2xl">
-          {links.map(link => (
-            <a 
-              key={link} 
-              href={`#${link.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`}
-              className="text-lg font-medium text-white/80 hover:text-white py-2 border-b border-white/5"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {link}
-            </a>
+          {links.map(link => renderLink(
+            link,
+            "text-lg font-medium text-white/80 hover:text-white py-2 border-b border-white/5",
+            () => setIsMenuOpen(false)
           ))}
           <div className="flex flex-col gap-4 mt-4">
             <a 
