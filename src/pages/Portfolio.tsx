@@ -141,7 +141,7 @@ export const PortfolioPage = () => {
                       <a 
                         href={project.url}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center justify-center gap-2 w-full bg-white/5 hover:bg-[#1565FF] text-white px-6 py-3 rounded-xl font-semibold transition-all group-hover:shadow-[0_0_20px_rgba(21,101,255,0.2)]"
                       >
                         Ver projeto <ExternalLink size={16} />

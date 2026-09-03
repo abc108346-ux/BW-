@@ -15,9 +15,9 @@ export const Contact = () => {
 
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           <motion.a 
-            href="https://wa.me/5551980507193"
+            href="https://wa.me/5551980507193?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20BW%20e%20gostaria%20de%20conversar."
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Check, ArrowRight, Zap, Star, Shield, Layout, Settings, MonitorPlay } from 'lucide-react';
 import { GlareHover } from '../components/GlareHover';
@@ -98,6 +99,10 @@ const extras = [
 export const Pricing = () => {
   const whatsappNumber = "5551980507193";
   const whatsappUrl = `https://wa.me/${whatsappNumber}`;
+
+  useEffect(() => {
+    document.title = "Planos & Preços para Criação de Sites | BW Web Design";
+  }, []);
 
   return (
     <div className="pt-32 pb-24 min-h-screen bg-[#000]">
@@ -205,9 +210,9 @@ export const Pricing = () => {
                   </ul>
 
                   <a 
-                    href={`${whatsappUrl}?text=Olá! Gostaria de saber mais sobre o plano ${plan.name}.`}
+                    href={`${whatsappUrl}?text=${encodeURIComponent(`Olá! Gostaria de saber mais sobre o plano ${plan.name}.`)}`}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className={`mt-auto w-full py-4 rounded-xl font-semibold flex justify-center items-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] ${
                       plan.popular 
                         ? 'bg-[#1565FF] text-white hover:bg-[#0f4ecc] shadow-[0_0_20px_rgba(21,101,255,0.3)]' 
@@ -247,9 +252,9 @@ export const Pricing = () => {
                   </div>
                 </div>
                 <a 
-                  href={`${whatsappUrl}?text=Olá! Gostaria de solicitar um orçamento para o Site Premium.`}
+                  href={`${whatsappUrl}?text=${encodeURIComponent('Olá! Gostaria de solicitar um orçamento para o Site Premium.')}`}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-white text-black px-8 py-4 rounded-xl font-bold transition-all hover:scale-[1.02] active:scale-[0.98]"
                 >
                   {premiumPlan.buttonText} <ArrowRight size={18} />
@@ -321,9 +326,9 @@ export const Pricing = () => {
             Conte o que sua empresa precisa e nós indicaremos a melhor solução para o seu projeto.
           </p>
           <a 
-            href={whatsappUrl}
+            href={`${whatsappUrl}?text=${encodeURIComponent('Olá! Gostaria de uma consultoria para escolher o melhor plano de site para minha empresa.')}`}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-[#1565FF] hover:bg-[#0f4ecc] text-white px-8 py-4 rounded-full font-bold transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(21,101,255,0.4)]"
           >
             Falar com a BW no WhatsApp <ArrowRight size={20} />

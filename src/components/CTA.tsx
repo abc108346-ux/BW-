@@ -26,9 +26,9 @@ export const CTA = () => {
             </p>
             
             <a 
-              href="https://wa.me/5551980507193"
+              href="https://wa.me/5551980507193?text=Ol%C3%A1!%20Quero%20criar%20o%20site%20da%20minha%20empresa%20com%20a%20BW."
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-white text-[#1565FF] hover:bg-gray-100 px-10 py-5 rounded-full font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
             >
               <MessageCircle size={24} />

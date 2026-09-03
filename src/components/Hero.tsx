@@ -39,9 +39,9 @@ export const Hero = () => {
           
           <div className="flex flex-col sm:flex-row gap-4">
             <a 
-              href="https://wa.me/5551980507193"
+              href="https://wa.me/5551980507193?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20minha%20empresa."
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 bg-[#1565FF] hover:bg-[#0f4ecc] text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(21,101,255,0.4)]"
             >
               🚀 Solicitar orçamento

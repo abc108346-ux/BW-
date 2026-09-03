@@ -80,13 +80,19 @@ export const Header = () => {
         </nav>
 
         <div className="flex items-center gap-4">
-          <a href="https://instagram.com/bwweb.design" target="_blank" rel="noreferrer" className="text-white/80 hover:text-[#1565FF] transition-colors hidden sm:block">
+          <a 
+            href="https://instagram.com/bwweb.design" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-white/80 hover:text-[#1565FF] transition-colors hidden sm:block"
+            aria-label="Instagram da BW Web Design"
+          >
             <Instagram size={24} />
           </a>
           <a 
-            href="https://wa.me/5551980507193" 
+            href="https://wa.me/5551980507193?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20minha%20empresa." 
             target="_blank" 
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="bg-[#1565FF] hover:bg-[#0f4ecc] text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(21,101,255,0.3)] hidden sm:block"
           >
             Solicitar Orçamento
@@ -113,15 +119,15 @@ export const Header = () => {
             <a 
               href="https://instagram.com/bwweb.design" 
               target="_blank" 
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="flex items-center gap-3 text-white/80 hover:text-white py-2"
             >
               <Instagram size={24} /> Instagram
             </a>
             <a 
-              href="https://wa.me/5551980507193" 
+              href="https://wa.me/5551980507193?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20minha%20empresa." 
               target="_blank" 
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="bg-[#1565FF] hover:bg-[#0f4ecc] text-white px-6 py-4 rounded-xl text-center font-bold text-lg"
             >
               Solicitar Orçamento

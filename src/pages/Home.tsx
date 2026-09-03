@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Hero } from '../components/Hero';
 import { TrustedBy } from '../components/TrustedBy';
 import { Differentials } from '../components/Differentials';
@@ -11,6 +12,10 @@ import { Contact } from '../components/Contact';
 import { CTA } from '../components/CTA';
 
 export const Home = () => {
+  useEffect(() => {
+    document.title = "BW | Bernardo Web Design — Criação de Sites Profissionais";
+  }, []);
+
   return (
     <>
       <Hero />
