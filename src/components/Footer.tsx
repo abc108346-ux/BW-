@@ -1,4 +1,4 @@
-import { Instagram, Phone, Mail, MapPin, Clock, ShieldCheck, ArrowUpRight } from 'lucide-react';
+import { Instagram, Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { Logo } from './Header';
 
@@ -47,9 +47,9 @@ export const Footer = () => {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-40 bg-[#1565FF]/10 blur-[120px] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
           {/* Col 1: Bio & Social */}
-          <div className="lg:col-span-1">
+          <div>
             <div className="mb-6 inline-block">
               <Logo />
             </div>
@@ -86,7 +86,7 @@ export const Footer = () => {
           </div>
 
           {/* Col 2: Menu Rápido */}
-          <div>
+          <div className="md:pl-4 lg:pl-10">
             <h4 className="font-bold text-white text-base mb-6 tracking-wide">Navegação</h4>
             <ul className="flex flex-col gap-3">
               {navLinks.map(link => (
@@ -130,24 +130,6 @@ export const Footer = () => {
                 <span>Segunda a Sexta: 08h às 19h</span>
               </li>
             </ul>
-          </div>
-
-          {/* Col 4: Segurança & Garantias */}
-          <div>
-            <h4 className="font-bold text-white text-base mb-6 tracking-wide">Segurança & Qualidade</h4>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col gap-3">
-              <div className="flex items-center gap-2 text-emerald-400 text-sm font-semibold">
-                <ShieldCheck size={18} />
-                <span>Ambiente Seguro (HTTPS)</span>
-              </div>
-              <p className="text-xs text-white/60 leading-relaxed">
-                Nossos sites contam com certificado SSL ativo, infraestrutura global em nuvem e alta velocidade de resposta.
-              </p>
-              <div className="pt-2 border-t border-white/10 flex items-center justify-between text-xs text-white/50">
-                <span>Vercel Cloud Network</span>
-                <span className="text-emerald-400 font-mono">100% Uptime</span>
-              </div>
-            </div>
           </div>
         </div>
 

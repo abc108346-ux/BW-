@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Instagram, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import logoImg from '../assets/logo.png';
 
 export const Logo = () => (
   <Link to="/" className="flex items-center group">
     <img 
-      src="https://i.postimg.cc/yJRq94SW/image.png" 
+      src={logoImg} 
       alt="BW | Bernardo Web Design" 
-      className="h-16 md:h-24 object-contain group-hover:scale-105 transition-transform duration-300"
+      className="h-10 md:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
     />
   </Link>
 );

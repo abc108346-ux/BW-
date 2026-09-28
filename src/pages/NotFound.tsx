@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { Home, ArrowLeft, MessageCircle, LayoutGrid, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
+import { Logo } from '../components/Header';
 
 export const NotFound = () => {
   useEffect(() => {
@@ -21,13 +22,7 @@ export const NotFound = () => {
           transition={{ duration: 0.5 }}
           className="mb-8 inline-block"
         >
-          <Link to="/" className="inline-block group">
-            <img 
-              src="https://i.postimg.cc/yJRq94SW/image.png" 
-              alt="BW | Bernardo Web Design" 
-              className="h-20 md:h-24 mx-auto object-contain group-hover:scale-105 transition-transform"
-            />
-          </Link>
+          <Logo />
         </motion.div>
 
         {/* 404 Badge */}

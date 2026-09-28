@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { Hero } from '../components/Hero';
-import { TrustedBy } from '../components/TrustedBy';
 import { Differentials } from '../components/Differentials';
 import { About } from '../components/About';
 import { Services } from '../components/Services';
@@ -19,7 +18,6 @@ export const Home = () => {
   return (
     <>
       <Hero />
-      <TrustedBy />
       <Differentials />
       <About />
       <Services />
