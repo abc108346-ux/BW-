@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
-import { MessageCircle, Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 export const Contact = () => {
   return (
@@ -21,10 +22,10 @@ export const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col items-center text-center gap-4 p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-[#1565FF]/50 transition-all group cursor-pointer"
+            className="flex flex-col items-center text-center gap-4 p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-[#25D366]/50 transition-all group cursor-pointer"
           >
-            <div className="w-16 h-16 bg-[#1565FF]/10 text-[#1565FF] rounded-full flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#1565FF] group-hover:text-white transition-all">
-              <MessageCircle size={32} />
+            <div className="w-16 h-16 bg-[#25D366]/10 text-[#25D366] rounded-full flex items-center justify-center mb-2 group-hover:scale-110 group-hover:bg-[#25D366] group-hover:text-white transition-all">
+              <WhatsAppIcon size={32} />
             </div>
             <h3 className="text-xl font-bold">WhatsApp</h3>
             <p className="text-white/60 text-sm">(51) 98050-7193</p>

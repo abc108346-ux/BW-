@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { MessageCircle } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 export const CTA = () => {
   return (
@@ -31,7 +31,7 @@ export const CTA = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-white text-[#1565FF] hover:bg-gray-100 px-10 py-5 rounded-full font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
             >
-              <MessageCircle size={24} />
+              <WhatsAppIcon size={24} className="text-[#25D366]" />
               Falar no WhatsApp
             </a>
           </div>

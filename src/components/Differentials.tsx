@@ -5,20 +5,20 @@ import {
   Smartphone, 
   Zap, 
   Search, 
-  MessageCircle, 
   ShieldCheck, 
   Server, 
   Globe, 
   Code, 
   HeartHandshake 
 } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 const differentials = [
   { icon: Palette, text: 'Design exclusivo' },
   { icon: Smartphone, text: 'Site responsivo' },
   { icon: Zap, text: 'Alta velocidade' },
   { icon: Search, text: 'SEO otimizado' },
-  { icon: MessageCircle, text: 'Integração com WhatsApp' },
+  { icon: WhatsAppIcon, text: 'Integração com WhatsApp' },
   { icon: ShieldCheck, text: 'Segurança' },
   { icon: Server, text: 'Hospedagem' },
   { icon: Globe, text: 'Domínio personalizado' },

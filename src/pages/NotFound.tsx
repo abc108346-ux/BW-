@@ -1,8 +1,9 @@
 import { motion } from 'motion/react';
-import { Home, ArrowLeft, MessageCircle, LayoutGrid, Tag } from 'lucide-react';
+import { Home, ArrowLeft, LayoutGrid, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { Logo } from '../components/Header';
+import { WhatsAppIcon } from '../components/WhatsAppIcon';
 
 export const NotFound = () => {
   useEffect(() => {
@@ -73,9 +74,9 @@ export const NotFound = () => {
             href="https://wa.me/5551980507193?text=Ol%C3%A1!%20Estava%20navegando%20no%20site%20da%20BW%20e%20preciso%20de%20ajuda."
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 active:scale-95"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 active:scale-95"
           >
-            <MessageCircle size={18} className="text-[#25D366]" /> Falar no WhatsApp
+            <WhatsAppIcon size={20} className="text-[#25D366]" /> Falar no WhatsApp
           </a>
         </motion.div>
 
@@ -86,9 +87,9 @@ export const NotFound = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="pt-8 border-t border-white/10 flex items-center justify-center gap-6 text-sm text-white/60"
         >
-          <Link to="/portfolio" className="inline-flex items-center gap-2 hover:text-[#1565FF] transition-colors">
-            <LayoutGrid size={15} /> Ver Portfólio
-          </Link>
+          <a href="/#servicos" className="inline-flex items-center gap-2 hover:text-[#1565FF] transition-colors">
+            <LayoutGrid size={15} /> Ver Serviços
+          </a>
           <span className="text-white/20">•</span>
           <Link to="/precos" className="inline-flex items-center gap-2 hover:text-[#1565FF] transition-colors">
             <Tag size={15} /> Ver Preços

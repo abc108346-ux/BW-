@@ -1,6 +1,7 @@
 import { Instagram, Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { Logo } from './Header';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 export const Footer = () => {
   const location = useLocation();
@@ -9,7 +10,6 @@ export const Footer = () => {
     { label: 'Início', path: '/' },
     { label: 'Sobre Nós', path: '/#sobre' },
     { label: 'Serviços', path: '/#servicos' },
-    { label: 'Portfólio', path: '/portfolio' },
     { label: 'Planos & Preços', path: '/precos' },
     { label: 'Perguntas Frequentes', path: '/#faq' },
     { label: 'Fale Conosco', path: '/#contato' }
@@ -73,7 +73,7 @@ export const Footer = () => {
                 aria-label="WhatsApp da BW Web Design"
                 className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:bg-[#25D366] hover:text-white hover:border-[#25D366] transition-all"
               >
-                <Phone size={18} />
+                <WhatsAppIcon size={18} />
               </a>
               <a 
                 href="mailto:contatosuportebw@gmail.com"
@@ -108,7 +108,7 @@ export const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 hover:text-white transition-colors group"
                 >
-                  <Phone size={16} className="text-[#1565FF] group-hover:scale-110 transition-transform" />
+                  <WhatsAppIcon size={16} className="text-[#25D366] group-hover:scale-110 transition-transform" />
                   <span>(51) 98050-7193</span>
                 </a>
               </li>

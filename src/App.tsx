@@ -13,7 +13,6 @@ import { CookieConsent } from './components/CookieConsent';
 import { GoogleAnalytics } from './components/GoogleAnalytics';
 import { Home } from './pages/Home';
 import { Pricing } from './pages/Pricing';
-import { PortfolioPage } from './pages/Portfolio';
 import { NotFound } from './pages/NotFound';
 
 function ScrollToTop() {
@@ -49,7 +48,6 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/precos" element={<Pricing />} />
-            <Route path="/portfolio" element={<PortfolioPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

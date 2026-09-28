@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Check, ArrowRight, Zap, Star, Shield, Layout, Settings, MonitorPlay } from 'lucide-react';
+import { Check, ArrowRight, Zap, Star, Shield, Layout, Settings, MonitorPlay, Sparkles } from 'lucide-react';
 import { GlareHover } from '../components/GlareHover';
+import { WhatsAppIcon } from '../components/WhatsAppIcon';
 
 const plans = [
   {
@@ -163,7 +164,7 @@ export const Pricing = () => {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 relative">
+        <div className="pt-6 grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 relative items-stretch">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -171,23 +172,31 @@ export const Pricing = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`h-full flex ${plan.popular ? 'lg:-translate-y-4' : ''}`}
+              className={`h-full flex flex-col relative ${plan.popular ? 'lg:-translate-y-3 z-20' : 'z-10'}`}
             >
-              <GlareHover className="w-full">
-                <div className={`h-full flex flex-col p-8 rounded-[inherit] bg-white/[0.02] border transition-colors duration-300 relative ${
-                  plan.popular ? 'border-[#1565FF] hover:border-[#1565FF]/80' : 'border-white/5 hover:border-white/20'
+              <GlareHover className="w-full h-full flex flex-col" overflowHidden={!plan.popular}>
+                <div className={`h-full flex flex-col p-8 rounded-2xl transition-all duration-300 relative ${
+                  plan.popular 
+                    ? 'bg-gradient-to-b from-[#1565FF]/20 via-[#1565FF]/5 to-white/[0.02] border-2 border-[#1565FF] shadow-[0_0_35px_rgba(21,101,255,0.25)] hover:shadow-[0_0_45px_rgba(21,101,255,0.4)] ring-1 ring-[#1565FF]/40' 
+                    : 'bg-white/[0.02] border border-white/5 hover:border-white/20'
                 }`}>
                   {plan.popular && (
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#1565FF] text-white px-4 py-1 rounded-full text-xs font-bold tracking-wider uppercase">
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#1565FF] to-blue-500 text-white px-4 py-1.5 rounded-full text-xs font-black tracking-wider uppercase shadow-[0_0_20px_rgba(21,101,255,0.8)] border border-blue-300/40 flex items-center gap-1.5 whitespace-nowrap z-30">
+                      <Sparkles size={13} className="text-yellow-300 shrink-0 fill-yellow-300" />
                       Mais Escolhido
                     </div>
                   )}
 
                   <div className="flex items-center gap-3 mb-4">
-                    <div className={`p-2 rounded-lg ${plan.popular ? 'bg-[#1565FF]/20 text-[#1565FF]' : 'bg-white/5 text-white/60'}`}>
-                      <plan.icon size={24} />
+                    <div className={`p-2.5 rounded-xl ${plan.popular ? 'bg-[#1565FF] text-white shadow-lg shadow-[#1565FF]/40' : 'bg-white/5 text-white/60'}`}>
+                      <plan.icon size={22} />
                     </div>
-                    <h3 className="text-xl font-bold">{plan.name}</h3>
+                    <div>
+                      <h3 className="text-xl font-bold">{plan.name}</h3>
+                      {plan.popular && (
+                        <span className="text-[11px] font-semibold text-[#1565FF] tracking-wide block">Recomendado</span>
+                      )}
+                    </div>
                   </div>
 
                   <p className="text-sm text-white/60 mb-6 flex-grow">{plan.desc}</p>
@@ -215,10 +224,11 @@ export const Pricing = () => {
                     rel="noopener noreferrer"
                     className={`mt-auto w-full py-4 rounded-xl font-semibold flex justify-center items-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] ${
                       plan.popular 
-                        ? 'bg-[#1565FF] text-white hover:bg-[#0f4ecc] shadow-[0_0_20px_rgba(21,101,255,0.3)]' 
+                        ? 'bg-[#1565FF] text-white hover:bg-[#0f4ecc] shadow-[0_0_25px_rgba(21,101,255,0.4)]' 
                         : 'bg-white/5 text-white hover:bg-white/10'
                     }`}
                   >
+                    <WhatsAppIcon size={18} className={plan.popular ? 'text-white' : 'text-[#25D366]'} />
                     {plan.buttonText}
                   </a>
                 </div>
@@ -255,8 +265,9 @@ export const Pricing = () => {
                   href={`${whatsappUrl}?text=${encodeURIComponent('Olá! Gostaria de solicitar um orçamento para o Site Premium.')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-white text-black px-8 py-4 rounded-xl font-bold transition-all hover:scale-[1.02] active:scale-[0.98]"
+                  className="inline-flex items-center justify-center gap-2.5 bg-white text-black hover:bg-gray-100 px-8 py-4 rounded-xl font-bold transition-all hover:scale-[1.02] active:scale-[0.98]"
                 >
+                  <WhatsAppIcon size={20} className="text-[#25D366]" />
                   {premiumPlan.buttonText} <ArrowRight size={18} />
                 </a>
               </div>
@@ -329,9 +340,10 @@ export const Pricing = () => {
             href={`${whatsappUrl}?text=${encodeURIComponent('Olá! Gostaria de uma consultoria para escolher o melhor plano de site para minha empresa.')}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-[#1565FF] hover:bg-[#0f4ecc] text-white px-8 py-4 rounded-full font-bold transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(21,101,255,0.4)]"
+            className="inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-4 rounded-full font-bold text-base transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(37,211,102,0.4)]"
           >
-            Falar com a BW no WhatsApp <ArrowRight size={20} />
+            <WhatsAppIcon size={22} className="text-white" />
+            Falar no WhatsApp
           </a>
         </motion.div>
       </section>

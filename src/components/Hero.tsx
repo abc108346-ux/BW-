@@ -47,10 +47,10 @@ export const Hero = () => {
               🚀 Solicitar orçamento
             </a>
             <Link 
-              to="/portfolio"
+              to="/precos"
               className="flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 active:scale-95"
             >
-              💼 Ver projetos
+              💎 Ver planos e preços
             </Link>
           </div>
         </motion.div>

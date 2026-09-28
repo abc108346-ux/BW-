@@ -1,6 +1,12 @@
 import { useRef, useState, PointerEvent, ReactNode } from "react";
 
-export const GlareHover = ({ children, className = "" }: { children: ReactNode, className?: string }) => {
+interface GlareHoverProps {
+  children: ReactNode;
+  className?: string;
+  overflowHidden?: boolean;
+}
+
+export const GlareHover = ({ children, className = "", overflowHidden = true }: GlareHoverProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
@@ -40,7 +46,7 @@ export const GlareHover = ({ children, className = "" }: { children: ReactNode, 
       className={`relative rounded-2xl will-change-transform ${className}`}
     >
       {/* Container do Conteúdo */}
-      <div className="relative w-full h-full rounded-[inherit] overflow-hidden z-10 bg-white/[0.02]">
+      <div className={`relative w-full h-full rounded-[inherit] ${overflowHidden ? 'overflow-hidden' : 'overflow-visible'} z-10 bg-white/[0.02]`}>
         {children}
       </div>
       
